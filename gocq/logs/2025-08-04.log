@@ -1,0 +1,64 @@
+[2025-08-04 16:07:16] [WARNING]: 账号密码未配置, 将使用二维码登录. 
+[2025-08-04 16:07:16] [WARNING]: 将在 5秒 后继续. 
+[2025-08-04 16:07:21] [WARNING]: 虚拟设备信息不存在, 将自动生成随机设备. 
+[2025-08-04 16:07:21] [WARNING]: no usable sign server 
+[2025-08-04 16:07:21] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:07:26] [WARNING]: 当前协议不支持二维码登录, 请配置账号密码登录. 
+[2025-08-04 16:13:50] [WARNING]: no usable sign server 
+[2025-08-04 16:13:50] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:13:56] [WARNING]: 登录需要滑条验证码, 请验证后重试. 
+[2025-08-04 16:13:56] [WARNING]: 请选择提交滑块ticket方式: 
+[2025-08-04 16:13:56] [WARNING]: 1. 自动提交 
+[2025-08-04 16:13:56] [WARNING]: 2. 手动抓取提交 
+[2025-08-04 16:13:56] [WARNING]: 请输入(1 - 2)： 
+[2025-08-04 16:14:11] [WARNING]: 请前往该地址验证 -> https://ti.qq.com/safe/tools/captcha/sms-verify-login?aid=16&apptype=2&cap_cd=tGacSmyU9kxtqxP1LkDCCKM-zRL8JPxyECTVjHU8kIZwdR7PDx6ZLw%2A%2A&clientype=1&sid=7150457234845100996&uin=0  
+[2025-08-04 16:16:44] [WARNING]: no usable sign server 
+[2025-08-04 16:16:44] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:16:50] [WARNING]: 登录需要滑条验证码, 请验证后重试. 
+[2025-08-04 16:16:50] [WARNING]: 请选择提交滑块ticket方式: 
+[2025-08-04 16:16:50] [WARNING]: 1. 自动提交 
+[2025-08-04 16:16:50] [WARNING]: 2. 手动抓取提交 
+[2025-08-04 16:16:50] [WARNING]: 请输入(1 - 2)： 
+[2025-08-04 16:16:56] [WARNING]: 请前往该地址验证 -> https://ti.qq.com/safe/tools/captcha/sms-verify-login?aid=16&apptype=2&cap_cd=FlYl1hf36BlNGZYG-YRWJ3p566O77QwRfbgOywzaMOtyUSJ5LaJL2A%2A%2A&clientype=1&sid=7062174658817191026&uin=0  
+[2025-08-04 16:16:56] [WARNING]: 请输入ticket： (Enter 提交) 
+[2025-08-04 16:17:37] [WARNING]: 登录失败: 登录失败，请前往QQ官网im.qq.com下载最新版QQ后重试，或通过问题反馈与我们联系。 Code: 45 
+[2025-08-04 16:17:37] [WARNING]: 你的账号被限制登录, 请配置 SignServer 后重试 
+[2025-08-04 16:22:40] [WARNING]: no usable sign server 
+[2025-08-04 16:22:40] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:22:46] [WARNING]: 登录需要滑条验证码, 请验证后重试. 
+[2025-08-04 16:22:46] [WARNING]: 请选择提交滑块ticket方式: 
+[2025-08-04 16:22:46] [WARNING]: 1. 自动提交 
+[2025-08-04 16:22:46] [WARNING]: 2. 手动抓取提交 
+[2025-08-04 16:22:46] [WARNING]: 请输入(1 - 2)： 
+[2025-08-04 16:22:50] [WARNING]: 请前往该地址验证 -> https://ti.qq.com/safe/tools/captcha/sms-verify-login?aid=16&apptype=2&cap_cd=SnbP4pGoEuqMeqs1Rt7CRGIrj6FJDy8QWg8clrIKdLHpdcHbuyZGcA%2A%2A&clientype=1&sid=1907475517134630358&uin=0  
+[2025-08-04 16:22:50] [WARNING]: 请输入ticket： (Enter 提交) 
+[2025-08-04 16:23:36] [WARNING]: 登录失败: 登录失败，请前往QQ官网im.qq.com下载最新版QQ后重试，或通过问题反馈与我们联系。 Code: 45 
+[2025-08-04 16:23:36] [WARNING]: 你的账号被限制登录, 请配置 SignServer 后重试 
+[2025-08-04 16:27:30] [ERROR]: Protocol -> decrypt payload error: unknown flag 
+[2025-08-04 16:27:30] [ERROR]: Protocol -> parse incoming packet error: return code unsuccessful: -10005 
+[2025-08-04 16:27:45] [ERROR]: Protocol -> parse incoming packet error: return code unsuccessful: -10005 
+[2025-08-04 16:28:00] [ERROR]: Protocol -> register client failed: Packet timed out 
+[2025-08-04 16:36:15] [WARNING]: no usable sign server 
+[2025-08-04 16:36:15] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:36:20] [WARNING]: 登录需要滑条验证码, 请验证后重试. 
+[2025-08-04 16:36:20] [WARNING]: 请选择提交滑块ticket方式: 
+[2025-08-04 16:36:20] [WARNING]: 1. 自动提交 
+[2025-08-04 16:36:20] [WARNING]: 2. 手动抓取提交 
+[2025-08-04 16:36:20] [WARNING]: 请输入(1 - 2)： 
+[2025-08-04 16:36:52] [WARNING]: 请前往该地址验证 -> https://ti.qq.com/safe/tools/captcha/sms-verify-login?aid=16&apptype=2&cap_cd=er5NhrHxg9lynWXU5IfPxellq-4Plhcz4TUC09Qh5Va_vKfRvsynFQ%2A%2A&clientype=1&sid=7114470498440868100&uin=0  
+[2025-08-04 16:36:52] [WARNING]: 请输入ticket： (Enter 提交) 
+[2025-08-04 16:37:28] [WARNING]: 登录失败: 请使用手Q扫描二维码或短信登录。 Code: 238 
+[2025-08-04 16:37:54] [WARNING]: 账号密码未配置, 将使用二维码登录. 
+[2025-08-04 16:37:54] [WARNING]: 将在 5秒 后继续. 
+[2025-08-04 16:37:59] [WARNING]: no usable sign server 
+[2025-08-04 16:37:59] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:38:22] [WARNING]: 登录失败: 你当前使用的QQ版本过低，请前往QQ官网im.qq.com下载最新版QQ后重试。 Code: 45 
+[2025-08-04 16:38:22] [WARNING]: 你的账号被限制登录, 请配置 SignServer 后重试 
+[2025-08-04 16:44:42] [WARNING]: 账号密码未配置, 将使用二维码登录. 
+[2025-08-04 16:44:42] [WARNING]: 将在 5秒 后继续. 
+[2025-08-04 16:44:50] [WARNING]: 签名服务器 https://qsign.loli.vet/ 可能不可用，请求出现错误：Get "https://qsign.loli.vet/": context deadline exceeded (Client.Timeout exceeded while awaiting headers) 
+[2025-08-04 16:44:50] [WARNING]: 签名服务器 https://qsign.loli.vet/v2 可能不可用，请求出现错误：Get "https://qsign.loli.vet/v2": context deadline exceeded (Client.Timeout exceeded while awaiting headers) 
+[2025-08-04 16:44:50] [WARNING]: no usable sign server 
+[2025-08-04 16:44:50] [WARNING]: 警告: 未配置签名服务器或签名服务器不可用, 这可能会导致登录 45 错误码或发送消息被风控 
+[2025-08-04 16:45:14] [WARNING]: 登录失败: 你当前使用的QQ版本过低，请前往QQ官网im.qq.com下载最新版QQ后重试。 Code: 45 
+[2025-08-04 16:45:14] [WARNING]: 你的账号被限制登录, 请配置 SignServer 后重试 
