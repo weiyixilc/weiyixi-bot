@@ -11,6 +11,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <kotlin.version>1.5.10</kotlin.version>
     </properties>
 
     <parent>
@@ -119,12 +120,26 @@
             <version>4.5.13</version>
         </dependency>
 
-        <!-- JSON处理 -->
+<!--        &lt;!&ndash; JSON处理 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--            <artifactId>jackson-databind</artifactId>-->
+<!--            <version>2.13.3</version>-->
+<!--        </dependency>-->
+
+        <!-- mirai 依赖 -->
         <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.13.3</version>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-core-jvm</artifactId>
+            <version>2.15.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.jetbrains.kotlin</groupId>
+            <artifactId>kotlin-stdlib-jdk8</artifactId>
+            <version>${kotlin.version}</version>
+        </dependency>
+
 
 
     </dependencies>
