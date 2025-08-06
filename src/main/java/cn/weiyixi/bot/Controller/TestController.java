@@ -37,16 +37,13 @@ public class TestController {
             String pythonCommand = "D:/python/python.exe";
             // 指定Python脚本的路径
             String scriptPath = "D:/java/Python/code/test.py";
-
             // 构建命令行命令
             ProcessBuilder builder = new ProcessBuilder(pythonCommand, scriptPath);
             Map<String,String> env = builder.environment();
             env.put("charset","UTF-8");
             builder.redirectErrorStream(true); // 将错误输出和标准输出合并
-
             // 启动进程
             Process process = builder.start();
-
             // 读取进程的输出（标准输出和错误输出）
             BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
             String line;
