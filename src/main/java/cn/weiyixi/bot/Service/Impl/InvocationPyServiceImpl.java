@@ -1,9 +1,15 @@
 package cn.weiyixi.bot.Service.Impl;
 
+import cn.hutool.core.io.FileUtil;
 import cn.weiyixi.bot.Service.InvocationPyService;
 import com.tc.common.resp.RespInfo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
+import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * @Author：weiyixi
@@ -17,6 +23,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class InvocationPyServiceImpl implements InvocationPyService {
 
+    @Value("scriptPath")
+    String scriptPath;
+
+    @Value("comicPath")
+    String comicPath;
 
     /**
      * 判断消息是否为禁漫号
@@ -82,7 +93,21 @@ public class InvocationPyServiceImpl implements InvocationPyService {
      * @return 当前正要下载的本子路径
      */
     private String UpdateOption(String jmNuber){
+        //清空文件夹
+        delPathFile(scriptPath);
 
+        // 1. 创建文件
+        FileUtil.touch(comicPath);
+
+        // 3. 准备多行数据
+        List<String> lines = Arrays.asList(
+                "这是第一行数据",
+                "这是第二行数据",
+                "这是第三行数据"
+        );
+        // 4. 追加多行内容
+        //FileUtil.appendUtf8Lines(lines, filePath);
+        System.out.println("数据写入完成");
         return null;
     }
 
@@ -104,7 +129,29 @@ public class InvocationPyServiceImpl implements InvocationPyService {
      */
     private String PackageJMComic(String ComicPath){
 
+
         return null;
+    }
+
+
+    /**
+     * 清空文件夹内所有文件
+     * @return 是否成功
+     */
+    private void delPathFile(String path){
+        // 判断文件夹是否存在
+        if (!FileUtil.exist(path)) {
+            System.out.println("文件夹不存在: " + path);
+            return;
+        }
+        // 判断文件夹内是否有文件
+        if (FileUtil.isNotEmpty(new File(path))) {
+            System.out.println("文件夹包含文件，开始删除...");
+            FileUtil.del(path);  // 完全删除文件夹及其所有内容
+            System.out.println("文件删除完成");
+        } else {
+            System.out.println("文件夹为空，无需删除");
+        }
     }
 
 

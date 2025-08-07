@@ -89,9 +89,6 @@ public class Star implements ApplicationRunner {
                 }
                 event.getGroup().sendMessage("测试直接发送文本");
             }
-
-
-
         });
 
 

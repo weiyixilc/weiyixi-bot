@@ -10,5 +10,4 @@ package cn.weiyixi.bot.Test;
  */
 public class test {
 
-
 }
