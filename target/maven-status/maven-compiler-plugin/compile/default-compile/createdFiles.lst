@@ -1,0 +1,9 @@
+cn\weiyixi\bot\WeiyixiBotApplocation.class
+cn\weiyixi\bot\Star.class
+cn\weiyixi\bot\Controller\TestController.class
+cn\weiyixi\bot\Entity\SelectInfo.class
+cn\weiyixi\bot\Service\Impl\InvocationPyServiceImpl.class
+cn\weiyixi\bot\Service\InvocationPyService.class
+cn\weiyixi\bot\Config\ApiConfig.class
+cn\weiyixi\bot\monitoring\MonitoringPrivateChatEvents.class
+cn\weiyixi\bot\monitoring\MonitoringGroupEvents.class

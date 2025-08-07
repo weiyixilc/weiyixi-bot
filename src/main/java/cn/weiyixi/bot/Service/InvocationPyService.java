@@ -19,14 +19,14 @@ public interface InvocationPyService {
      * 判断值是否为禁漫号
      * @return 判断结果
      */
-    RespInfo IsJMNuber(String message);
+    RespInfo IsJMNuber(String message) throws Exception;
 
 
     /**
      * 下载和打包禁漫漫画
      * @return 打包结果
      */
-    RespInfo DownloadAndPackageJMComic(String jmNuber);
+    RespInfo DownloadAndPackageJMComic(String jmNuber) throws Exception;
 
 
 

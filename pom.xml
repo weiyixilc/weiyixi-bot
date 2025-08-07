@@ -12,6 +12,7 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <kotlin.version>1.5.10</kotlin.version>
+        <mirai.version>2.16.0</mirai.version>
     </properties>
 
     <parent>
@@ -132,8 +133,32 @@
         <dependency>
             <groupId>net.mamoe</groupId>
             <artifactId>mirai-core-jvm</artifactId>
-            <version>2.15.0</version>
+            <version>${mirai.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-core-api-jvm</artifactId>
+            <version>${mirai.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-core-api</artifactId>
+            <version>${mirai.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-core-utils-jvm</artifactId>
+            <version>${mirai.version}</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>net.mamoe</groupId>-->
+<!--            <artifactId>mirai-core-all</artifactId>-->
+<!--            <version>2.16.0</version>-->
+<!--        </dependency>-->
 
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
