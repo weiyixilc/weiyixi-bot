@@ -5,6 +5,9 @@ import cn.hutool.core.util.ZipUtil;
 import cn.weiyixi.bot.Service.InvocationPyService;
 import com.tc.common.resp.RespInfo;
 import lombok.extern.slf4j.Slf4j;
+import net.lingala.zip4j.ZipFile;
+import net.lingala.zip4j.model.ZipParameters;
+import net.lingala.zip4j.model.enums.EncryptionMethod;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
@@ -39,6 +42,9 @@ public class InvocationPyServiceImpl implements InvocationPyService {
     // 指定Python解释器的路径，例如在Windows上是"python.exe"，在Linux/Mac上是"python3"
     @Value("${pythonCommand}")
     String pythonCommand;
+
+    @Value("${packagePassword}")
+    String packagePassword;
 
     /**
      * 判断消息是否为禁漫号
@@ -188,8 +194,22 @@ public class InvocationPyServiceImpl implements InvocationPyService {
         String zipPath = ComicPath+".zip";
         // 打包整个文件夹（包含子目录）
         File zipFile = ZipUtil.zip(ComicPath, zipPath, true);
-        log.info("打包完成：" + zipFile.getAbsolutePath());
-        return zipFile.getAbsolutePath();
+        log.info("打包zip完成：" + zipFile.getAbsolutePath());
+        //继续打包成7z包并添加密码
+        //packagePassword
+        // 配置压缩参数
+        ZipParameters parameters = new ZipParameters();
+        parameters.setEncryptFiles(true);
+        parameters.setEncryptionMethod(EncryptionMethod.AES); // 使用AES加密
+        try {
+            // 创建加密压缩文件
+            ZipFile seventZFile = new ZipFile(ComicPath+".7Z", packagePassword.toCharArray());
+            seventZFile.addFile(new File(zipFile.getAbsolutePath()), parameters);
+            log.info("打包7z完成：" + ComicPath+".7Z");
+        } catch (Exception e) {
+            log.info("7z加密压缩失败", e);
+        }
+        return ComicPath+".7Z";
     }
 
 
