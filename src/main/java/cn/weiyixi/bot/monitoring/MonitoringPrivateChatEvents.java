@@ -1,5 +1,6 @@
 package cn.weiyixi.bot.monitoring;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,6 +13,10 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class MonitoringPrivateChatEvents {
+
+    @Value("${packagePassword}")
+    String packagePassword;
+
 
 
 }
