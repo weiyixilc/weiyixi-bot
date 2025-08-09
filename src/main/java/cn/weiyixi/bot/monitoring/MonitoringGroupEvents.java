@@ -98,13 +98,6 @@ public class MonitoringGroupEvents {
                         .plus() 将多个消息元素连接成消息链
                         "\n" 添加换行符
                         reply 包含机器人要回复的文本内容 */
-//                    File file = new File("D:/TemporaryData/python/jm/comic/4228661.zip");
-//                    File file2 = new File("D:/TemporaryData/python/jm/comic/422866.zip");
-//                    ExternalResource resource = ExternalResource.create(file);
-//                    ExternalResource resource2 = ExternalResource.create(file2);
-//                    event.getGroup().getFiles().uploadNewFile("/4228661.zip",resource);
-//                    event.getGroup().getFiles().uploadNewFile("/422866.zip",resource2);
-//                    event.getGroup().sendMessage(new At(event.getSender().getId()).plus("\n 下好了喵！"));
                 }
             }catch (Exception e){
                 log.info(e.getMessage());
