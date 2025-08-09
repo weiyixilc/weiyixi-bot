@@ -2,8 +2,10 @@ package cn.weiyixi.bot;
 
 
 
+import cn.hutool.core.io.FileUtil;
 import cn.weiyixi.bot.monitoring.MonitoringGroupEvents;
 import cn.weiyixi.bot.monitoring.MonitoringPrivateChatEvents;
+import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import net.mamoe.mirai.Bot;
 import net.mamoe.mirai.BotFactory;
@@ -30,6 +32,7 @@ import java.util.Set;
  * @Date：2025/8/4 15:46
  * @Filename：Star
  */
+@Slf4j
 @Component
 public class Star implements ApplicationRunner {
 
@@ -39,13 +42,22 @@ public class Star implements ApplicationRunner {
     @Value("${qq}")
     Long QQ;
 
+    @Value("${scriptPath}")
+    String scriptPath;
+
 
     //Spring容器启动完成时触发
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        //调用连接方法
-        //Client.connect("");
-//
+        //判断下载目录是否存在，不存在则创建
+        // 判断文件夹是否存在
+        if (!FileUtil.exist(scriptPath)) {
+            //不存在，创建
+            //创建临时漫画文件夹
+            FileUtil.mkdir(scriptPath);
+            log.info("创建脚本存放目录："+scriptPath);
+        }
+        //创建机器人
         Bot bot = BotFactory.INSTANCE.newBot(QQ, BotAuthorization.byQRCode(), configuration -> {
             //configuration.setProtocol(BotConfiguration.MiraiProtocol.ANDROID_WATCH);
             configuration.setProtocol(BotConfiguration.MiraiProtocol.MACOS);

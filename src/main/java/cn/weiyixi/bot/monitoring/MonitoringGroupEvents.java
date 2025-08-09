@@ -16,6 +16,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.InputStream;
 
 /**
@@ -43,6 +44,7 @@ public class MonitoringGroupEvents {
     public void MonitoringGroup(){
         // 3. 注册群消息监听器
         GlobalEventChannel.INSTANCE.subscribeAlways(GroupMessageEvent.class, event -> {
+            ExternalResource resource = null;
             try {
                 MessageChain message = event.getMessage();
                 long botId = event.getBot().getId();
@@ -50,7 +52,6 @@ public class MonitoringGroupEvents {
                 boolean isAtBot = message.stream().anyMatch(singleMsg ->
                         singleMsg instanceof At && ((At) singleMsg).getTarget() == botId
                 );
-
                 if (isAtBot) {
                     // 5. 获取消息内容(去除@部分)
                     String content = message.contentToString()
@@ -67,13 +68,14 @@ public class MonitoringGroupEvents {
                             if("200".equals(downloadRespInfo.getContent().toString())){
                                 //成功
                                 File file = new File(downloadRespInfo.getMessage());
-                                ExternalResource resource = ExternalResource.create(file);
-                                event.getGroup().getFiles().uploadNewFile("/"+respInfo.getMessage()+".7z",resource);
+                                resource  = ExternalResource.create(file);
+                                AbsoluteFile absoluteFile = event.getGroup().getFiles().uploadNewFile("/" + respInfo.getMessage() + ".7z", resource);
+                                log.info("发送状态："+absoluteFile.toString());
+                                resource.close();
                                 reply="下好了喵！解压密码是"+packagePassword;
                             }else{
                                 reply=downloadRespInfo.getMessage();
                             }
-
                         }else if("222".equals(respInfo.getContent())){
                             //jm号错误
                             reply=respInfo.getMessage();
@@ -106,7 +108,17 @@ public class MonitoringGroupEvents {
                 }
             }catch (Exception e){
                 log.info(e.getMessage());
+            }finally {
+                try {
+                    if(resource != null){
+                        //释放资源
+                        resource.close();
+                    }
+                } catch (IOException e) {
+                    log.info(e.getMessage());
+                }
             }
+
         });
 
     }
