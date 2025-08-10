@@ -60,7 +60,7 @@ public class Star implements ApplicationRunner {
         //创建机器人
         Bot bot = BotFactory.INSTANCE.newBot(QQ, BotAuthorization.byQRCode(), configuration -> {
             //configuration.setProtocol(BotConfiguration.MiraiProtocol.ANDROID_WATCH);
-            configuration.setProtocol(BotConfiguration.MiraiProtocol.MACOS);
+            configuration.setProtocol(BotConfiguration.MiraiProtocol.MACOS);//使用macos登陆
 //            configuration.setProtocol(BotConfiguration.MiraiProtocol.ANDROID_PHONE);
             //心跳策略
             configuration.setHeartbeatStrategy(BotConfiguration.HeartbeatStrategy.STAT_HB);

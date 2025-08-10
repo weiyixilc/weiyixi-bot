@@ -1,6 +1,7 @@
 package cn.weiyixi.bot;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.freemarker.FreeMarkerAutoConfiguration;
@@ -15,6 +16,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * @Filename：WeiyixiBotApplocation
  */
 
+@Slf4j
 @EnableAsync
 @SpringBootApplication(exclude = {FreeMarkerAutoConfiguration.class})
 public class WeiyixiBotApplocation {
@@ -22,8 +24,7 @@ public class WeiyixiBotApplocation {
         try {
             SpringApplication.run(WeiyixiBotApplocation.class, args);
         }catch (Exception e){
-            e.printStackTrace();
+            log.error(e.getMessage(),e);
         }
     }
-
 }
