@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -110,7 +111,7 @@ public class InvocationPyServiceImpl implements InvocationPyService {
         }else{
             //失败
             //清空文件夹
-            delPathFile(scriptPath);
+            delPathFile(comicPath);
             return RespInfo.successResult(999,"漫画下载失败，可能网络不好请稍后再试");
         }
     }
@@ -123,7 +124,7 @@ public class InvocationPyServiceImpl implements InvocationPyService {
      */
     private String UpdateOption(String jmNuber) throws Exception{
         //清空文件夹
-        delPathFile(scriptPath);
+        delPathFile(comicPath);
         //创建临时漫画文件夹
         FileUtil.mkdir(comicPath+"/"+jmNuber);
 
@@ -193,7 +194,7 @@ public class InvocationPyServiceImpl implements InvocationPyService {
         // 输出ZIP文件路径（需替换为实际路径）
         String zipPath = ComicPath+".zip";
         // 打包整个文件夹（包含子目录）
-        File zipFile = ZipUtil.zip(ComicPath, zipPath, true);
+        File zipFile = ZipUtil.zip(ComicPath, zipPath,StandardCharsets.UTF_8, true);
         log.info("打包zip完成：" + zipFile.getAbsolutePath());
         //继续打包成7z包并添加密码
         //packagePassword
