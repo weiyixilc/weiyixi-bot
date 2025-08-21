@@ -111,7 +111,7 @@ public class InvocationPyServiceImpl implements InvocationPyService {
         }else{
             //失败
             //清空文件夹
-            delPathFile(comicPath);
+            delPathFile(scriptPath);
             return RespInfo.successResult(999,"漫画下载失败，可能网络不好请稍后再试");
         }
     }
@@ -124,7 +124,7 @@ public class InvocationPyServiceImpl implements InvocationPyService {
      */
     private String UpdateOption(String jmNuber) throws Exception{
         //清空文件夹
-        delPathFile(comicPath);
+        delPathFile(scriptPath);
         //创建临时漫画文件夹
         FileUtil.mkdir(comicPath+"/"+jmNuber);
 
