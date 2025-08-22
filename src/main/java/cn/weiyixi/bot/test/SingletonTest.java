@@ -1,5 +1,10 @@
 package cn.weiyixi.bot.test;
 
+import cn.hutool.core.io.FileUtil;
+import net.mamoe.mirai.utils.AtomicInteger;
+
+import java.io.File;
+
 /**
  * @Author：weiyixi
  * @Package：cn.weiyixi.bot.test
@@ -10,19 +15,21 @@ package cn.weiyixi.bot.test;
  */
 public class SingletonTest {
 
-    private static volatile SingletonTest instance;
-
-    private SingletonTest() {}
-
-    public static SingletonTest getInstance() {
-        if (instance == null) {
-            synchronized (SingletonTest.class) {
-                if (instance == null) {
-                    instance = new SingletonTest();
+    public static AtomicInteger s = new AtomicInteger(0);
+    static Object object = new Object();
+    public static void main(String[] args) {
+        for (int i = 0; i < 10; i++) {
+            new Thread(()->{
+                String path = "D:/TemporaryData/Thread/"+s.getAndIncrement()+".txt";
+                FileUtil.touch(path);
+                for (int j = 0; j < 200; j++) {
+                    for (int k = 0; k < 200; k++) {
+                        FileUtil.appendString("你妈死了\t", path,"UTF-8" );
+                    }
+                    FileUtil.appendString("\n", path,"UTF-8" );
                 }
-            }
+            }).start();
         }
-        return instance;
     }
 
 }
